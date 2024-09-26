@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Treazure</h1>
+        </div>
+        <div class="links">
+            <a href="home.html">Home</a>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <form action="signup_process.php" method="POST"> 
+            <h1>Sign Up</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Name" name="full_name" required>
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Email" name="email" required>
+                <i class='bx bx-envelope'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Username" name="username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" name="password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Phone" name="phone" required>
+                <i class='bx bx-phone'></i>
+            </div>
+            <label for="railcard">Do you want a railcard?</label>
+            <select id="railcard" name="railcard">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select><br><br>
+            <div id="railcard_details" style="display: none;">
+                <label for="railcard_type">Select Railcard Type:</label>
+                <select id="railcard_type" name="railcard_type">
+                    <option value="student">Student Railcard</option>
+                    <option value="senior">Senior Railcard</option>
+                    <option value="family">Family & Friends Railcard</option>
+                    <option value="disabled">Disabled Persons Railcard</option>
+                    <option value="two_together">Two Together Railcard</option>
+                    <option value="network">Network Railcard</option>
+                    <option value="16_25">16-25 Railcard</option>
+                    <option value="hm_forces">HM Forces Railcard</option>
+                    <option value="jobcentre">Jobcentre Plus Travel Discount Card</option>
+                    <option value="scotrail">ScotRail Club 50</option>
+                </select><br><br>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <div class="register-link">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Show/hide railcard details based on user selection
+        document.getElementById("railcard").addEventListener("change", function() {
+            var railcardDetails = document.getElementById("railcard_details");
+            if (this.value === "yes") {
+                railcardDetails.style.display = "block";
+            } else {
+                railcardDetails.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
